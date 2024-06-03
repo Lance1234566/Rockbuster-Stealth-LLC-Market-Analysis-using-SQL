@@ -1,0 +1,46 @@
+Here is a SQL query with a common tab;e expression that identifies the films with the highest and lowest total revenue generated from rentals.
+
+-- Define a Common Table Expression (CTE) named RevenuePerFilm
+WITH RevenuePerFilm AS (
+    SELECT 
+        f.film_id,                 -- Select the film ID
+        f.title,                   -- Select the film title
+        SUM(p.amount) AS TotalRevenue -- Calculate the total revenue for each film
+    FROM 
+        payment p                 -- From the payment table
+    JOIN rental r ON p.rental_id = r.rental_id  -- Join with the rental table on rental_id to link payments to rentals
+    JOIN inventory i ON r.inventory_id = i.inventory_id  -- Join with the inventory table on inventory_id to link rentals to inventory items
+    JOIN film f ON i.film_id = f.film_id       -- Join with the film table on film_id to link inventory items to films
+    GROUP BY 
+        f.film_id,                -- Group by film ID
+        f.title                   -- Group by film title
+)
+
+-- Select the film with the highest total revenue
+SELECT * FROM (
+    SELECT 
+        'Highest Revenue' AS Category,  -- Label this result as "Highest Revenue"
+        title,                           -- Select the film title
+        TotalRevenue                     -- Select the total revenue
+    FROM 
+        RevenuePerFilm                   -- From the CTE RevenuePerFilm
+    ORDER BY 
+        TotalRevenue DESC                -- Order by total revenue in descending order to get the highest revenue film first
+    LIMIT 1                              -- Limit the result to 1 film
+) AS HighestRevenue                      -- Name this subquery as HighestRevenue
+
+-- Combine the results with the film having the lowest revenue
+UNION ALL
+
+-- Select the film with the lowest total revenue
+SELECT * FROM (
+    SELECT 
+        'Lowest Revenue' AS Category,   -- Label this result as "Lowest Revenue"
+        title,                          -- Select the film title
+        TotalRevenue                    -- Select the total revenue
+    FROM 
+        RevenuePerFilm                  -- From the CTE RevenuePerFilm
+    ORDER BY 
+        TotalRevenue ASC                -- Order by total revenue in ascending order to get the lowest revenue film first
+    LIMIT 1                             -- Limit the result to 1 film
+) AS LowestRevenue                      -- Name this subquery as LowestRevenue;
