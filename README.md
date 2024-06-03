@@ -1,4 +1,7 @@
 # Overview
+![299781862-5e9d3c5c-f309-4ee8-857f-5ae2e42b4cc6](https://github.com/Lance1234566/Rockbuster-Stealth-LLC-Market-Analysis-using-SQL/assets/17070828/bf450274-096e-4047-b59c-60b7967e8c0b)
+
+
 Rockbuster Stealth LLC, once a well-renowned movie rental company, is facing challenges due to the rise of streaming giants like Netflix and Amazon Prime. To reclaim its position in the highly competitive streaming environment, Rockbuster Stealth aims to pivot towards an online streaming rental service. This project involves a comprehensive market analysis using SQL to support this strategic shift.
 
 ## Objectives
