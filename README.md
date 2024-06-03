@@ -32,7 +32,7 @@ Customer Segmentation: Segment customers based on rental behavior and preference
 
 Dashboard Development: Create interactive dashboards to visualize insights and support decision-making.
 
-## Technologies Used
+## Tools Used
 SQL: For data extraction, transformation, and analysis.
 
 PostgreSQL: For database management.
@@ -40,3 +40,6 @@ PostgreSQL: For database management.
 Excel: For data manipulation and reporting.
 
 Tableau: For interactive dashboard creation.
+
+## Visualizations
+https://public.tableau.com/views/RockbusterStealthLLCMarketAnalysisVisualizations/Revenuevs_CustomerCount?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link
