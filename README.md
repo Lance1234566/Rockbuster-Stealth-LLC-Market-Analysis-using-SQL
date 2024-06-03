@@ -13,17 +13,6 @@ Rockbuster Stealth LLC, once a well-renowned movie rental company, is facing cha
 
 ● Provide actionable recommendations to optimize the transition to an online streaming service.
 
-## Key Inquiries
-● How are customers distributed across different countries and what is the total revenue generated in each of these countries?
-
-● Who are the top individual spenders among all customers?
-
-● What are the most popular genres?
-
-● Does the availability of movies in certain genres correlate with higher revenue or rental rates?
-
-● How can we extrapolate these insights to improve upon the current Rockbuster business model?
-
 ## Key Features
 ● Data Extraction and Transformation: Extract and transform rental data from Rockbuster Stealth's legacy systems using SQL.
 
