@@ -1,4 +1,4 @@
-Here is a SQL query with a common tab;e expression that identifies the films with the highest and lowest total revenue generated from rentals.
+Here is a SQL query with a common table expression that identifies the films with the highest and lowest total revenue generated from rentals.
 
 -- Define a Common Table Expression (CTE) named RevenuePerFilm
 WITH RevenuePerFilm AS (
