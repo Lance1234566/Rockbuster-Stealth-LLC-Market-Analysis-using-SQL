@@ -1,0 +1,50 @@
+
+
+-- Calculate the average amount paid by the top 5 customers
+SELECT AVG(Top5CustomersPayments.total_amount_paid) AS average_amount_paid
+FROM (
+    -- Subquery to select the top 5 customers by total amount paid
+    SELECT 
+        B.customer_id, 
+        B.first_name AS first_name, 
+        B.last_name AS last_name, 
+        E.country AS country, 
+        D.city AS city, 
+        SUM(A.amount) AS total_amount_paid
+    FROM payment AS A
+    -- Join payments with customers
+    INNER JOIN customer AS B ON A.customer_id = B.customer_id
+    -- Join customers with addresses
+    INNER JOIN address AS C ON B.address_id = C.address_id
+    -- Join addresses with cities
+    INNER JOIN city AS D ON C.city_id = D.city_id
+    -- Join cities with countries
+    INNER JOIN country AS E ON D.country_id = E.country_id
+    -- Filter by cities that are in the top 10 cities from the top 10 countries
+    WHERE D.city IN (  
+        -- Subquery to find top 10 cities from the top 10 countries
+        SELECT D.city  
+        FROM customer AS B  
+        INNER JOIN address AS C ON B.address_id = C.address_id
+        INNER JOIN city AS D ON C.city_id = D.city_id
+        INNER JOIN country AS E ON D.country_id = E.country_id
+        -- Filter by countries that are in the top 10 by number of customers
+        WHERE E.country IN (   
+            -- Innermost subquery to find top 10 countries by number of customers
+            SELECT E.country   
+            FROM customer AS B
+            INNER JOIN address AS C ON B.address_id = C.address_id
+            INNER JOIN city AS D ON C.city_id = D.city_id
+            INNER JOIN country AS E ON D.country_id = E.country_id
+            GROUP BY E.country
+            ORDER BY COUNT(B.customer_id) DESC
+            LIMIT 10
+        )
+        GROUP BY E.country, D.city
+        ORDER BY COUNT(B.customer_id) DESC
+        LIMIT 10
+    )
+    GROUP BY B.customer_id, B.first_name, B.last_name, E.country, D.city
+    ORDER BY SUM(A.amount) DESC
+    LIMIT 5
+) AS Top5CustomersPayments;
