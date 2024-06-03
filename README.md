@@ -46,3 +46,6 @@ Rockbuster Stealth LLC, once a well-renowned movie rental company, is facing cha
 
 ## Visualizations
 https://public.tableau.com/views/RockbusterStealthLLCMarketAnalysisVisualizations/Revenuevs_CustomerCount?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link
+
+## Resources
+The Rockbuster Stealth LLC dataset was created and provided by CareerFoundry for use in this analysis. The dataset contains information on stores, customers, films, actors, payment, etc.
