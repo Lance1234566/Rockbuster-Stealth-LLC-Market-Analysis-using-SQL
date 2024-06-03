@@ -25,24 +25,24 @@ Rockbuster Stealth LLC, once a well-renowned movie rental company, is facing cha
 ● How can we extrapolate these insights to improve upon the current Rockbuster business model?
 
 ## Key Features
-Data Extraction and Transformation: Extract and transform rental data from Rockbuster Stealth's legacy systems using SQL.
+● Data Extraction and Transformation: Extract and transform rental data from Rockbuster Stealth's legacy systems using SQL.
 
-Trend Analysis: Identify key trends in movie rentals, customer preferences, and revenue patterns.
+● Trend Analysis: Identify key trends in movie rentals, customer preferences, and revenue patterns.
 
-Competitor Analysis: Compare Rockbuster Stealth's performance with major streaming competitors.
+● Competitor Analysis: Compare Rockbuster Stealth's performance with major streaming competitors.
 
-Customer Segmentation: Segment customers based on rental behavior and preferences to tailor the streaming service.
+● Customer Segmentation: Segment customers based on rental behavior and preferences to tailor the streaming service.
 
-Dashboard Development: Create interactive dashboards to visualize insights and support decision-making.
+● Dashboard Development: Create interactive dashboards to visualize insights and support decision-making.
 
 ## Tools Used
-SQL: For data extraction, transformation, and analysis.
+● SQL: For data extraction, transformation, and analysis.
 
-PostgreSQL: For database management.
+● PostgreSQL: For database management.
 
-Excel: For data manipulation and reporting.
+● Excel: For data manipulation and reporting.
 
-Tableau: For interactive dashboard creation.
+● Tableau: For interactive dashboard creation.
 
 ## Visualizations
 https://public.tableau.com/views/RockbusterStealthLLCMarketAnalysisVisualizations/Revenuevs_CustomerCount?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link
